@@ -38,6 +38,9 @@
             class="form-control" name="segundonumero" id="segundonumero" aria-describedby="helpId" placeholder="456">
             <small id="helpId" class="form-text text-muted">Segundo dato dentro de la operacion</small>
         </div>
+        <div>
+          <span id="soyresultado">---</span>
+        </div>
         <div class="container">
             <a name="" id="" class="btn btn-success" href="#" role="button" onclick="suma()">Suma</a>
             <a name="" id="" class="btn btn-danger" href="#" role="button" onclick="resta()">Resta</a>
@@ -93,6 +96,11 @@
 
         var suma = primernumero * segundonumero;
         alert(suma)
+    }
+
+    function mostrarmensajehtml(){
+      numero = Number(document.getElementById("numero").value);
+      document.getElementById("soyresultado").innerHTML = numero;
     }
   </script>
 </body>
