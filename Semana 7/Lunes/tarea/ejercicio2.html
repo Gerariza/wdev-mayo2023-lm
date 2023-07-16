@@ -13,3 +13,17 @@ luego le hagan el descuento.
 #12000 * +.13 - 1000
 
 print(ejercicio1.upper()) -->
+
+<script>
+    var iva = 13/100 + 1
+    var descuento = 1000
+
+    var descuentoAntesIva = 12000 - descuento;
+    var descuentoDespuesIva = 12000 * iva;
+
+    var resultadoAntesIva = descuentoAntesIva * iva;
+    var resultadoDespuesIva = descuentoDespuesIva - descuento;
+
+    alert("Resultado descuento ANTES de IVA:" + resultadoAntesIva)
+    alert("Resultado descuento DESPUES de Iva:" + resultadoDespuesIva)
+</script>

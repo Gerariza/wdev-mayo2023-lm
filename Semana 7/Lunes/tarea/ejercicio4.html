@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header>
+    <!-- place navbar here -->
+  </header>
+  <main>
+    <div class="container">
+        <form action="">
+            <div class="mb-3">
+              <label for="" class="form-label">Precio</label>
+              <input type="number"
+                class="form-control" name="datoPrecio" id="datoPrecio" aria-describedby="helpId" placeholder="Ej. 50.000CRC">
+              <small id="helpId" class="form-text text-muted">Colocar monto de precio</small>
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Descuento</label>
+              <input type="number"
+                class="form-control" name="datoDescuento" id="datoDescuento" aria-describedby="helpId" placeholder="Ej. 500CRC">
+              <small id="helpId" class="form-text text-muted">Colocar monto de descuento</small>
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label">IVA</label>
+              <input type="number"
+                class="form-control" name="datoPorcentaje" id="datoPorcentaje" aria-describedby="helpId" placeholder="Ej. 13%">
+              <small id="helpId" class="form-text text-muted">Colocar solo el numero del porcentaje</small>
+            </div>
+            <a name="" id="" class="btn btn-primary" href="#" role="button" onclick="precioFinal()">Calcular</a>
+        </form>
+    </div>
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+  <script>
+    //ejercio4 = """
+//Escriba un algoritmo que lea los siguientes valores:
+//precio, impuesto y descuento,
+//y calcule el valor total de la factura.
+//"""
+//#cuantos inputs? 3
+//#resultado 15400 ??? no tiene el iva, y no tiene el descuento.
+//#resultado - descuennto, al final se le aplica el iva
+  </script>
+  <script>
+    function precioFinal() {
+        var varPrecio = Number(document.getElementById("datoPrecio").value);
+        var varDescuento = Number(document.getElementById("datoDescuento").value);
+        var varIva = Number(document.getElementById("datoPorcentaje").value);
+
+        var precioDescuento = varPrecio - varDescuento;
+        var ivaporcentaje = varIva / 100;
+        var iva = 1 + ivaporcentaje
+        var precioConIva = precioDescuento * iva;
+        alert(precioConIva)
+    }
+  </script>
+</body>
+
+</html>

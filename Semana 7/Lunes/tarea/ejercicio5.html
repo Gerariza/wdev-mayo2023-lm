@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header>
+    <!-- place navbar here -->
+  </header>
+  <main>
+    <div class="container">
+        <div class="container">
+            <label for="">Genero</label>
+        </div>
+        <form>
+            <label for="sexo">Sexo:</label>
+            <select id="sexo">
+                <option value="Hombre">Hombre</option>
+                <option value="Mujer">Mujer</option>
+            </select><br><br>
+            <div class="mb-3">
+              <label for="edad" class="form-label">Edad:</label>
+              <input type="number"
+                class="form-control" name="edad" id="edad" aria-describedby="helpId" placeholder="">
+            </div>
+            <a name="" id="" class="btn btn-primary" href="#" role="button"onclick="verificarEdad()">Verificar</a>
+            <span id="resultado"></span>
+        </form>
+    </div>
+  </main>
+  <footer>
+    <!-- place footer here -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+
+  <script>
+//ejercio5 = """
+//Escriba un algoritmo que permita leer el sexo
+//y la edad de una persona dada e imprima si la
+//persona está en edad de pensionarse o no,
+// tomando en cuenta los siguientes datos:
+//Hombres: edad de pensión mayor de 65 años.
+//Mujeres: edad de pensión mayor a 62 años.
+
+function verificarEdad() {
+        // Obtener el valor del sexo y la edad ingresados
+        var sexo = document.getElementById("sexo").value;
+        var edad = parseInt(document.getElementById("edad").value);
+
+        // Verificar si la persona está en edad de pensionarse
+        var pensionable = false;
+        if (sexo === "Hombre" && edad > 65) {
+            pensionable = true;
+        } else if (sexo === "Mujer" && edad > 62) {
+            pensionable = true;
+        }
+
+        // Mostrar el resultado en el span
+        if (pensionable) {
+            document.getElementById("resultado").innerHTML = "La persona está en edad de pensionarse.";
+        } else {
+            document.getElementById("resultado").innerHTML = "La persona no está en edad de pensionarse.";
+        }
+    }
+
+  </script>
+</body>
+
+</html>
