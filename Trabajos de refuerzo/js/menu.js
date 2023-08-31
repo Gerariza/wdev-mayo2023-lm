@@ -1,4 +1,4 @@
-menuprincipal.innerHTML += `<nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+menuprincipal.innerHTML += `<nav class="navbar navbar-expand-sm navbar-dark bg-secondary">
 <a class="navbar-brand" href="index.html">Inicio</a>
 <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
     aria-expanded="false" aria-label="Toggle navigation"></button>
@@ -26,8 +26,8 @@ menuprincipal.innerHTML += `<nav class="navbar navbar-expand-sm navbar-dark bg-p
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Estudiantes</a>
             <div class="dropdown-menu" aria-labelledby="dropdownId">
-            <a class="dropdown-item" href="listaEstudiantes.html">Lista</a>
-            <a class="dropdown-item" href="crearEstudiantes2.html">Crear</a>
+            <a class="dropdown-item" href="listaEstudiante2.html">Lista</a>
+            <a class="dropdown-item" href="crearEstudiante2.html">Crear</a>
         </li>
         <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Grupo</a>
             <div class="dropdown-menu" aria-labelledby="dropdownId">

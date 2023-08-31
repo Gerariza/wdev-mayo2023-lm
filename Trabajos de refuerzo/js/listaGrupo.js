@@ -26,7 +26,7 @@ function ajustardatostabla(datos){
     for (const objetoindividual of datos) {
 
         tablaresultado.innerHTML += `
-            <tr class="table-primary" >
+            <tr class="table" >
                 <td scope="row">${objetoindividual.id}</td>
                 <td>${objetoindividual.nombre}</td>
                 <td>
