@@ -1,0 +1,72 @@
+<script>
+
+class inventario {
+    constructor(id,nombre,precio,cantidad,diccionario){
+        this.id = id
+        this.nombre = nombre
+        this.precio = precio
+        this.cantidad = cantidad
+        this.diccionario = "";
+        this.lista = [];
+    }
+
+    editarId(id){
+        this.id = id
+    }
+
+    editarNombre(nombre){
+        this.nombre = nombre
+    }
+
+    editarPrecio(precio){
+        this.precio = precio
+    }
+
+    editarCantifad(){
+        this.cantidad = cantidad
+    }
+    editarDiccionario(){
+        this.diccionario = diccionario
+    }
+
+    devolverId(){
+        return this.id
+    }
+
+    devolverNombre(){
+        return this.nombre
+    }
+
+    devolverPrecio(){
+        var precioConIva = this.precio * 1.13
+        return precioConIva
+    }
+
+    devolcerCantidad(){
+        return this.cantidad
+    }
+
+    devolverDiccionario(){
+        return this.diccionario
+    }
+}
+
+var diccionarioJson = {
+    id: 456,
+    nombre: "ThigoCell",
+    precio: 95,
+    cantidad: 5000
+}
+
+console.log(diccionarioJson)
+
+const articuloUno = new inventario(123,"Thigofix",120,3000,);
+const articuloDos = new inventario(321,"Thigoplast",150,5000,);
+
+
+
+console.log(articuloUno.devolverPrecio());
+articuloUno.editarPrecio(170);
+console.log(articuloUno.devolverPrecio());
+console.log(articuloDos.devolverNombre());
+</script>

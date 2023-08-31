@@ -15,7 +15,7 @@ menuprincipal.innerHTML += `
             <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
             <div class="dropdown-menu" aria-labelledby="dropdownId">
                 <a class="dropdown-item" href="listarcurso.html">Listar Curso</a>
-                <a class="dropdown-item" href="#">Action 2</a>
+                <a class="dropdown-item" href="#">Crear Curso</a>
             </div>
         </li>
     </ul>
