@@ -26,8 +26,8 @@
                 // e.preventDefault();
                 //alert("Si esta funcionando")
                 //mostrarMensaje();
-                var primerDato = Number(document.getElementById("primerDato").value);
-                var segundoDato = Number(document.getElementById("segundoDato").value);
+                var primerDato = Number($("#primerDato").val());
+                var segundoDato = Number($("#segundoDato").val())
 
                 var suma = primerDato + segundoDato;
                 alert(suma)
@@ -36,8 +36,8 @@
 
             $("#restar").click(function (e) { 
                 //e.preventDefault();
-                var primerDato = Number(document.getElementById("primerDato").value);
-                var segundoDato = Number(document.getElementById("segundoDato").value);
+                var primerDato = Number($("#primerDato").val());
+                var segundoDato = Number($("#segundoDato").val())
 
                 var resta = primerDato - segundoDato;
                 alert(resta)
@@ -45,8 +45,8 @@
 
             $("#multiplicar").click(function (e) { 
                 //e.preventDefault();
-                var primerDato = Number(document.getElementById("primerDato").value);
-                var segundoDato = Number(document.getElementById("segundoDato").value);
+                var primerDato = Number($("#primerDato").val());
+                var segundoDato = Number($("#segundoDato").val())
 
                 var multiplicar = primerDato * segundoDato;
                 alert(multiplicar)
@@ -54,7 +54,11 @@
 
             $("#dividir").click(function (e) { 
                 //e.preventDefault();
-                jq
+                var primerDato = Number($("#primerDato").val());
+                var segundoDato = Number($("#segundoDato").val())
+
+                var multiplicar = primerDato / segundoDato;
+                alert(multiplicar)
             });
         });
 
@@ -75,7 +79,7 @@
                 <form action="">
                     <div class="mb-3">
                         <label for="" class="form-label">Primer Dato</label>
-                        <input type="numbe"
+                        <input type="number"
                         class="form-control" name="primerDato" id="primerDato" aria-describedby="helpId" placeholder="123">
                     </div>
                     <div class="mb-3">
