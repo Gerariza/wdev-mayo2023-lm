@@ -18,49 +18,38 @@
         // Todo lo de JQ va dentro de un script
 
         $(document).ready(function () {
-            //alert("Bienvenido (con JQREADY)")
-
-            //Se puso JQCLICK
-            //seria para remplazar "onclick" con JQ
             $("#sumar").click(function (e) { 
-                // e.preventDefault();
-                //alert("Si esta funcionando")
-                //mostrarMensaje();
-                var primerDato = Number($("#primerDato").val());
-                var segundoDato = Number($("#segundoDato").val())
-
-                var suma = primerDato + segundoDato;
-                alert(suma)
-                
-            });
-
-            $("#restar").click(function (e) { 
                 //e.preventDefault();
-                var primerDato = Number($("#primerDato").val());
-                var segundoDato = Number($("#segundoDato").val())
-
-                var resta = primerDato - segundoDato;
-                alert(resta)
+                var primerDato = $("#primerDato").val(); //JQValGet
+                var segundoDato = $("#segundoDato").val();
+                sumar(primerDato, segundoDato)
             });
 
-            $("#multiplicar").click(function (e) { 
-                //e.preventDefault();
-                var primerDato = Number($("#primerDato").val());
-                var segundoDato = Number($("#segundoDato").val())
+                        //funcion para ocultar parte del HTML
+                        // Debe ir dentro del JQReady
+                    $("#ocultar").click(function (e) { //JQClick
+                        e.preventDefault();
+                        $("#contenedor1").hide(); //JQHide
+                    });
 
-                var multiplicar = primerDato * segundoDato;
-                alert(multiplicar)
-            });
-
-            $("#dividir").click(function (e) { 
-                //e.preventDefault();
-                var primerDato = Number($("#primerDato").val());
-                var segundoDato = Number($("#segundoDato").val())
-
-                var multiplicar = primerDato / segundoDato;
-                alert(multiplicar)
-            });
+                    //Funcion paaar volver a mostrar "contenedor1"
+                    $("#mostrar").click(function (e) { //JQClick
+                        e.preventDefault();
+                        $("#contenedor1").show(); //JQShow
+                    });
+    
         });
+
+        //Funcion se conecta con SUMA para realizar la parte de la sumade los valores
+        function sumar(primerDato, segundoDato){
+            //resultado = parseInt(primerDato) + parseInt(segundoDato); //ParseIn es para resultados de numeros enteros 12
+            var resultado = Number(primerDato) + Number(segundoDato); //Number es para resultados de numeros con desimales y enteros 12.4 
+            $("#resultado").val(resultado); // JQValSET
+        }
+
+        
+
+
 
         function mostrarMensaje(){
             alert("Si esta funcionando");
@@ -77,15 +66,20 @@
         <main>
             <div>
                 <form action="">
-                    <div class="mb-3">
+                    <div class="mb-3" id="contenedor1">
                         <label for="" class="form-label">Primer Dato</label>
                         <input type="number"
                         class="form-control" name="primerDato" id="primerDato" aria-describedby="helpId" placeholder="123">
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3" id="contenedor2">
                         <label for="" class="form-label">Segundo Dato</label>
                         <input type="number"
                         class="form-control" name="segundoDato" id="segundoDato" aria-describedby="helpId" placeholder="456">
+                    </div>
+                    <div class="mb-3" id="contenedor3">
+                        <label for="" class="form-label">RESPUESTA</label>
+                        <input type="number"
+                        class="form-control" name="resultado" id="resultado" aria-describedby="helpId" placeholder="123">
                     </div>
                 </form>
             </div>
@@ -94,6 +88,8 @@
                 <a name="restar" id="restar" class="btn btn-primary" href="#" role="button">Restar</a>
                 <a name="multiplicar" id="multiplicar" class="btn btn-primary" href="#" role="button">Multiplicar</a>
                 <a name="dividir" id="dividir" class="btn btn-primary" href="#" role="button">Dividir</a>
+                <a name="ocultar" id="ocultar" class="btn btn-danger" href="#" role="button">OCULTAR</a>
+                <a name="mostrar" id="mostrar" class="btn btn-success" href="#" role="button">MOSTRAR</a>
 
             </div>
         </main>
