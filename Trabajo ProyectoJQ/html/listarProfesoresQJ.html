@@ -10,50 +10,44 @@
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="/Trabajos de refuerzo/css/listas.css">
 </head>
 <body>
-    <div class="container-fluid">
-        <header> 
-            <div id="menuprincipal">
-                
-            </div>
-          </header>
-          <main>
-            <!--Tabla Listar Curso-->
+    <!--Tabla Listar Curso-->
     <div class="table-responsive">
-      <table class="table table-striped
-      table-hover	
-      table-borderless
-      table-primary
-      align-middle">
-        <thead class="table-light">
-          <caption>Lista de Profesores</caption>
-          <tr>
-            <th>Id</th>
-            <th>Cedula</th>
-            <th>Correoelectronico</th>
-            <th>Telefono</th>
-            <th>telefonocelular</th>
-            <th>fechanacimiento</th>
-            <th>sexo</th>
-            <th>direccion</th>
-            <th>apellidopaterno</th>
-            <th>apellidomaterno</th>
-            <th>idCarreras</th>
-            <th>usuario</th>
-            <th>nacionalidad</th>
-            <th>Acciones</th>
-          </tr>
-          </thead>
-          <tbody class="table-group-divider" id="tablaresultado">
-            
-          </tbody>
-          <tfoot>
-            
-          </tfoot>
-      </table>
-    </div>
+        <table class="table table-striped
+        table-hover	
+        table-borderless
+        table-primary
+        align-middle">
+          <thead class="table-light">
+            <caption>Lista de Cursos</caption>
+            <tr>
+              <th>Id</th>
+              <th>Cedula</th>
+              <th>Correoelectronico</th>
+              <th>Telefono</th>
+              <th>telefonocelular</th>
+              <th>fechanacimiento</th>
+              <th>sexo</th>
+              <th>direccion</th>
+              <th>apellidopaterno</th>
+              <th>apellidomaterno</th>
+              <th>idCarreras</th>
+              <th>usuario</th>
+              <th>nacionalidad</th>
+              <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody class="table-group-divider" id="tablaresultado">
+              
+            </tbody>
+            <tfoot>
+              
+            </tfoot>
+        </table>
+      </div>
             
           </main>
           <footer>
@@ -82,17 +76,19 @@
         </div>
       </div>
     </div>
-    <!-- Modal ELIMINAR -->
+
+    <!--Modal Eliminar-->
+    <!-- MODAL BORRAR CURSO -->
     <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
     <div class="modal fade" id="myModalEliminar" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
       <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="modalTitleId">Eliminando Registo</h5>
+            <h5 class="modal-title" id="modalTitleId">Eliminando dato</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            Eliminado
+            Eliminado 
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -152,7 +148,7 @@
     </script>
     
 
-  <script src="/Trabajos de refuerzo/js/menu.js"></script>
+  <script src="/Trabajo ProyectoJQ/js/menuJQ.js"></script>
  
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
@@ -162,7 +158,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
-   <script src="/Trabajos de refuerzo/js/listarCurso.js"></script>
+   <script src="/Trabajo ProyectoJQ/js/listarProfesoresJQ.js"></script>
 </body>
 
 </html>

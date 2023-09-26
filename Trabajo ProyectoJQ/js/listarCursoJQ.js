@@ -1,27 +1,33 @@
 var apibase = "https://paginas-web-cr.com/ApiPHP/apis/";
 var apiconsultar = "ListaCurso.php";
+var url = apiconsultar + apibase;
 var apieliminar = "BorrarCursos.php";
 var apieditar = "ActualizarCursos.php";
 
-const myModalEliminar = new bootstrap.Modal(document.getElementById('myModalEliminar'))
-const myModalEditar = new bootstrap.Modal(document.getElementById('myModalEditar'))
-const modalSuccess = new bootstrap.Modal(document.getElementById('modalSuccess'),);
+// const myModalEliminar = new bootstrap.Modal(document.getElementById('myModalEliminar'))
+// const myModalEditar = new bootstrap.Modal(document.getElementById('myModalEditar'))
+// const modalSuccess = new bootstrap.Modal(document.getElementById('modalSuccess'),);
 
 let tablaresultado = document.querySelector(`#tablaresultado`);
 
+$(document).ready(function () {
+    consultardatos()
+});
+
 function consultardatos(){
-    // alert("consulta");
-    // fetch sirve para extrar, insertar, modificar, eliminar, consultardatos
-    apiurl = apibase + apiconsultar;
-    fetch(apiurl)
-    .then(estructura => estructura.json())
-    .then((datosrespuesta) => {
-        // ajustardatostabla
-        console.log(datosrespuesta.code)
-        console.log(datosrespuesta.data)
-        ajustardatostabla(datosrespuesta.data)
-        })
-    .catch(console.log);
+    $.ajax({
+        type: "POST",
+        url: "url",
+        //data: "JSON", NO SE USA
+        dataType: "json",
+        success: function (response) {
+            ajustardatostabla(response.data);
+            console.log(response);
+        },
+        error: function ( xhr, textStatus, errorThrown){
+            console.log("Error", errorThrown);
+        }
+    });
 }
 
 function ajustardatostabla(datos){
@@ -58,18 +64,34 @@ function eliminandodato(id){
         "id":id
     }
 
-    apiurl = apibase + apieliminar;
-    fetch(apiurl,
-        {
-            method:'POST',
-            body: JSON.stringify(datosEnviar)
-        })
-    .then(estructura => estructura.json())
-    .then((datosrespuesta) => {
-            completeDelete()
-        })
-    .catch(console.log);
+    $.ajax({
+        type: "POST",
+        url: "url",
+        data: JSON.stringify(datosEnviar),
+        dataType: "dataType",
+        success: function (response) {
+            
+        },
+        error: function ( xhr, textStatus, errorThrown){
+            console.log("Error ", errorThrown);
+        }
+    });
 }
+//function eliminarCurso(id) 
+// {
+//     var datosEnviar = {"id":id}
+
+// $.ajax({
+//     type: "post",
+//     url: urlBorrar,
+//     data: JSON.stringify(datosEnviar),
+//     dataType: "json",
+//     success: function (response) {
+//         modalBorrarCurso.show();
+//         refrescarTabla();
+//     }
+// });
+// }
 
 function  completeDelete(){
     myModalEliminar.hide();
@@ -78,7 +100,7 @@ function  completeDelete(){
 }
 
 function mostrarEditarModal(id, nombre, descripcion, tiempo){
-    document.getElementById('id').value = id;
+    $(id).val(id);
     document.getElementById('nombre').value = nombre;
     document.getElementById('descripcion').value = descripcion;
     document.getElementById('tiempo').value = tiempo;
@@ -98,20 +120,18 @@ formulario.addEventListener('submit', function(e)
         "tiempo":document.getElementById('tiempo').value ,
         "usuario":"German Ariza"
     }
-
-    apiurl = apibase + apieditar ;
-    fetch(apiurl,
-        {
-            method:'POST',
-            body: JSON.stringify(datosEnviar)
-        })
-    .then(estructura => estructura.json())
-    .then((datosrespuesta) => {
-        alert("Salvado")
-            // modalSuccess.show()
+    $.ajax({
+        type: "POST",
+        url: "url",
+        data: JSON.stringify(datosEnviar),
+        dataType: "dataType",
+        success: function (response) {
             completeInsert()
-        })
-    .catch(console.log);
+        },
+        error: function ( xhr, textStatus, errorThrown){
+            console.log("Error ", errorThrown);
+        }
+    });
 });
 
 function completeInsert(){
