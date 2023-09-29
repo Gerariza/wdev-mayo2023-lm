@@ -14,46 +14,54 @@
     <link rel="stylesheet" href="/Trabajos de refuerzo/css/listas.css">
 </head>
 <body>
+  <div class="container-fluid">
+    <header>
+      <div id="menuJQ"></div>
+    </header>
+      <main>
     <!--Tabla Listar Curso-->
-    <div class="table-responsive">
-        <table class="table table-striped
-        table-hover	
-        table-borderless
-        table-primary
-        align-middle">
-          <thead class="table-light">
-            <caption>Lista de Cursos</caption>
-            <tr>
-              <th>Id</th>
-              <th>Cedula</th>
-              <th>Correoelectronico</th>
-              <th>Telefono</th>
-              <th>telefonocelular</th>
-              <th>fechanacimiento</th>
-              <th>sexo</th>
-              <th>direccion</th>
-              <th>apellidopaterno</th>
-              <th>apellidomaterno</th>
-              <th>idCarreras</th>
-              <th>usuario</th>
-              <th>nacionalidad</th>
-              <th>Acciones</th>
-            </tr>
-            </thead>
-            <tbody class="table-group-divider" id="tablaresultado">
+      <div class="table-responsive">
+          <table class="table table-striped
+          table-hover	
+          table-borderless
+          table-primary
+          align-middle">
+            <thead class="table-light">
+              <caption>Lista de Cursos</caption>
+              <tr>
+                <th>Id</th>
+                <th>Cedula</th>
+                <th>Correoelectronico</th>
+                <th>Telefono</th>
+                <th>telefonocelular</th>
+                <th>fechanacimiento</th>
+                <th>sexo</th>
+                <th>direccion</th>
+                <th>nombre</th>
+                <th>apellidopaterno</th>
+                <th>apellidomaterno</th>
+                <th>idCarreras</th>
+                <th>usuario</th>
+                <th>nacionalidad</th>
+                <th>Acciones</th>
+              </tr>
+              </thead>
+              <tbody class="table-group-divider" id="tablaresultado">
+                
+              </tbody>
+              <tfoot>
+                
+              </tfoot>
+          </table>
+        </div>
               
-            </tbody>
-            <tfoot>
-              
-            </tfoot>
-        </table>
-      </div>
-            
-          </main>
-          <footer>
-            <!-- place footer here -->
-          </footer>
-    </div>
+      </main>
+      <footer>
+              <!-- place footer here -->
+      </footer>
+  </div>
+  
+  
     <!-- Modal trigger button -->
     <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalId">
       Launch
@@ -77,9 +85,9 @@
       </div>
     </div>
 
-    <!--Modal Eliminar-->
+
     <!-- MODAL BORRAR CURSO -->
-    <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+    
     <div class="modal fade" id="myModalEliminar" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
       <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
         <div class="modal-content">
@@ -91,13 +99,15 @@
             Eliminado 
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save</button>
+            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save</button> -->
           </div>
         </div>
       </div>
     </div>
-<!-- Modal EDITAR -->
+
+    <!-- Modal EDITAR -->
+
     <div class="modal fade" id="myModalEditar" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
       <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
         <div class="modal-content">
@@ -114,24 +124,69 @@
                 <small id="helpId" class="form-text text-muted">Id</small>
               </div>
               <div class="mb-3">
-                <label for="" class="form-label">Nombre</label>
+                <label for="" class="form-label">cedula</label>
                 <input required type="text"
-                  class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Ingresa el nombre">
-                <small id="helpId" class="form-text text-muted">Nombre</small>
+                  class="form-control" name="cedula" id="cedula" aria-describedby="helpId" placeholder="null">
+                <small id="helpId" class="form-text text-muted">null</small>
               </div>
               <div class="mb-3">
-                <label for="" class="form-label">Descripcion</label>
+                <label for="" class="form-label">correoelectronico</label>
                 <input required type="text"
-                  class="form-control" name="descripcion" id="descripcion" aria-describedby="helpId" placeholder="Descripcion">
-                <small id="helpId" class="form-text text-muted">Descripcion</small>
+                  class="form-control" name="correoelectronico" id="correoelectronico" aria-describedby="helpId" placeholder="correoelectronico">
+                <small id="helpId" class="form-text text-muted">null</small>
               </div>
               <div class="mb-3">
-                <label for="" class="form-label">Tiempo</label>
+                <label for="" class="form-label">null</label>
                 <input required type="text"
-                  class="form-control" name="tiempo" id="tiempo" aria-describedby="helpId" placeholder="Ingrese el tiempo">
-                <small id="helpId" class="form-text text-muted">Tiempo</small>
+                  class="form-control" name="null" id="null" aria-describedby="helpId" placeholder="null">
+                <small id="helpId" class="form-text text-muted">null</small>
               </div>
-              <button type="submit" class="btn btn-primary">Enviar</button>
+              <div class="mb-3">
+                <label for="" class="form-label">null</label>
+                <input required type="text"
+                  class="form-control" name="null" id="null" aria-describedby="helpId" placeholder="null">
+                <small id="helpId" class="form-text text-muted">null</small>
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">null</label>
+                <input required type="text"
+                  class="form-control" name="null" id="null" aria-describedby="helpId" placeholder="null">
+                <small id="helpId" class="form-text text-muted">null</small>
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">null</label>
+                <input required type="text"
+                  class="form-control" name="null" id="null" aria-describedby="helpId" placeholder="null">
+                <small id="helpId" class="form-text text-muted">null</small>
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">null</label>
+                <input required type="text"
+                  class="form-control" name="null" id="null" aria-describedby="helpId" placeholder="null">
+                <small id="helpId" class="form-text text-muted">null</small>
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">null</label>
+                <input required type="text"
+                  class="form-control" name="null" id="null" aria-describedby="helpId" placeholder="null">
+                <small id="helpId" class="form-text text-muted">null</small>
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">null</label>
+                <input required type="text"
+                  class="form-control" name="null" id="null" aria-describedby="helpId" placeholder="null">
+                <small id="helpId" class="form-text text-muted">null</small>
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">null</label>
+                <input required type="text"
+                  class="form-control" name="null" id="null" aria-describedby="helpId" placeholder="null">
+                <small id="helpId" class="form-text text-muted">null</small>
+              </div>
+              
+              
+              <!-- BOTON ENVIAR -->
+              <button id="btnEditar" type="submit" class="btn btn-primary">Enviar</button>
             </form>
           </div>
           <div class="modal-footer">
@@ -140,16 +195,11 @@
         </div>
       </div>
     </div>
-    
-    
-    <!-- Optional: Place to the bottom of scripts -->
-    <script>
-    
-    </script>
-    
 
+
+  <!-- LINCKS DE LIBRERIAS Y ARCHIVOS -->
   <script src="/Trabajo ProyectoJQ/js/menuJQ.js"></script>
- 
+
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">

@@ -20,8 +20,8 @@ menuJQ.innerHTML += `<nav class="navbar navbar-expand-sm navbar-dark bg-secondar
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profesores</a>
             <div class="dropdown-menu" aria-labelledby="dropdownId">
-            <a class="dropdown-item" href="listarProfesorJQ.html">Lista</a>
-            <a class="dropdown-item" href="crearProfesorJQ.html">Crear</a>
+            <a class="dropdown-item" href="listarProfesoresQJ.html">Lista</a>
+            <a class="dropdown-item" href="crearProfesoresJQ.html">Crear</a>
         </li>
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Estudiantes</a>

@@ -61,6 +61,8 @@ function ajustardatostabla(datos){
     }
 }
 
+//----------APARTADO DE ELIMINAR-----------------
+
 function mostrarModal(id){
     
     eliminandodato(id);
@@ -92,6 +94,8 @@ function  completeDelete(){
     tablaresultado.innerHTML = ``;
     consultardatos();
 }
+
+//----------APARTADO DE EDITAR-----------------
 
 function mostrarEditarModal(id, cedula, correoelectronico, telefono, telefonocelular, fechanacimiento, sexo, direccion, nombre, apellidopaterno, apellidomaterno, idCarreras, nacionalidad){
     document.getElementById('id').value = id;

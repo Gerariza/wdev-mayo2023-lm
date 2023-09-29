@@ -5,46 +5,49 @@ var apiCrear = "InsertarProfesores.php"
 
 var urlCrear = apiBase + apiCrear;
 
-$(btnenviar).click(function (e) { //el selector el es boton que va a ejecutar esta fucnion 
-    e.preventDefault();
-    //alert("hola enviar")
-
-    var datosEnviar = {
-        "cedula":$("#cedula").val(), // JQvalget //datos que vamos a enviar recolectados en el html crear
-        "correoelectronico":$("#correoelectronico").val(),
-        "telefono":$("#telefono").val(),
-        "telefonocelular":$("#telefonocelular").val(),
-        "fechanacimiento":$("#fechanacimiento").val(),
-        "sexo":$("#sexo").val(),
-        "direccion":$("#direccion").val(),
-        "nombre":$("#nombre").val(),
-        "apellidopaterno":$("#apellidopaterno").val(),
-        "apellidomaterno":$("#apellidomaterno").val(),
-        "nacionalidad":$("#nacionalidad").val(),
-        "idCarreras":$("#idCarreras").val(),
-        "usuario":$("#usuario").val(),
-        
-    }
-
-    $.ajax({
-        type: "POST",
-        url: urlCrear,
-        data: JSON.stringify(datosEnviar),
-        dataType: "json",
-        success: function (response) {
-            completarInsertar() // no se pone entre parensesis response
-        },
-        error: function ( xhr, textStatus, errorThrown){
-            console.log("Error", errorThrown);
+$(document).ready(function () {
+    $(btnenviar).click(function (e) { //el selector el es boton que va a ejecutar esta fucnion 
+        e.preventDefault();
+        //alert("hola enviar")
+    
+        var datosEnviar = {
+            "cedula":$("#cedula").val(), // JQvalget //datos que vamos a enviar recolectados en el html crear
+            "correoelectronico":$("#correoelectronico").val(),
+            "telefono":$("#telefono").val(),
+            "telefonocelular":$("#telefonocelular").val(),
+            "fechanacimiento":$("#fechanacimiento").val(),
+            "sexo":$("#sexo").val(),
+            "direccion":$("#direccion").val(),
+            "nombre":$("#nombre").val(),
+            "apellidopaterno":$("#apellidopaterno").val(),
+            "apellidomaterno":$("#apellidomaterno").val(),
+            "nacionalidad":$("#nacionalidad").val(),
+            "idCarreras":$("#idCarreras").val(),
+            "usuario":$("#usuario").val(),
+            
         }
+    
+        $.ajax({
+            type: "POST",
+            url: urlCrear,
+            data: JSON.stringify(datosEnviar),
+            dataType: "json",
+            success: function (response) {
+                myModalCrear.show();
+                completarInsertar() 
+            },
+            error: function ( xhr, textStatus, errorThrown){
+                console.log("Error", errorThrown);
+            }
+        });
     });
+    
+    
+    function completarInsertar(){   
+        window.location = 'listarProfesoresQJ.html'
+    }
+    
 });
-
-
-function completarInsertar(){
-    myModalCrear.show
-    window.location("listarProfesoresJQ.html");
-}
 
 
 // "id": "1235041",
