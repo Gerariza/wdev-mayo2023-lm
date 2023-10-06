@@ -130,11 +130,10 @@ $("#btnEditar").click(function (e) {
         "apellidomaterno":$("#apellidomaterno").val(),
         "nacionalidad":$("#nacionalidad").val(),
         "idCarreras":$("#idCarreras").val(),
-        "usuario":$("#usuario").val(),
+        "usuario": "German Ariza",
         
     }
 
-//revisar ID de modal (modalsuccess)
     $.ajax({
         type: "POST",
         url: urlEditar,

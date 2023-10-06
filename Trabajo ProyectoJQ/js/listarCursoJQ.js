@@ -1,12 +1,14 @@
 var apibase = "https://paginas-web-cr.com/ApiPHP/apis/";
 var apiconsultar = "ListaCurso.php";
-var url = apiconsultar + apibase;
 var apieliminar = "BorrarCursos.php";
 var apieditar = "ActualizarCursos.php";
 
-// const myModalEliminar = new bootstrap.Modal(document.getElementById('myModalEliminar'))
-// const myModalEditar = new bootstrap.Modal(document.getElementById('myModalEditar'))
-// const modalSuccess = new bootstrap.Modal(document.getElementById('modalSuccess'),);
+var url =  apibase + apiconsultar;
+var urlBorrar = apibase + apieliminar
+
+const myModalEliminar = new bootstrap.Modal(document.getElementById('myModalEliminar'))
+const myModalEditar = new bootstrap.Modal(document.getElementById('myModalEditar'))
+const modalSuccess = new bootstrap.Modal(document.getElementById('modalSuccess'),);
 
 let tablaresultado = document.querySelector(`#tablaresultado`);
 
@@ -17,7 +19,7 @@ $(document).ready(function () {
 function consultardatos(){
     $.ajax({
         type: "POST",
-        url: "url",
+        url: url,
         //data: "JSON", NO SE USA
         dataType: "json",
         success: function (response) {
@@ -30,9 +32,9 @@ function consultardatos(){
     });
 }
 
-function ajustardatostabla(datos){
-    console.log("datos"+datos);
-    for (const objetoindividual of datos) {
+function ajustardatostabla(response){
+    console.log(response);
+    for (const objetoindividual of response) {
         tablaresultado.innerHTML += `
             <tr class="table" >
                 <td scope="row">${objetoindividual.id}</td>
@@ -43,7 +45,7 @@ function ajustardatostabla(datos){
                 <td>
                     <a name="Editar" id="Editar" class="btn btn-success" role="button" onclick="mostrarEditarModal('${objetoindividual.id}','${objetoindividual.nombre}','${objetoindividual.descripcion}','${objetoindividual.tiempo}')">Editar</a>
                     ||
-                    <a name="Eliminar" id="Eliminar" class="btn btn-danger" role="button" onclick="mostrarModal('${objetoindividual.id}')">Eliminar</a>
+                    <a name="Eliminar" id="Eliminar" class="btn btn-danger" role="button" onclick="mostrarModalEliminar('${objetoindividual.id}')">Eliminar</a>
                 </td>
                 
             </tr>
@@ -51,47 +53,27 @@ function ajustardatostabla(datos){
     }
 }
 
-function mostrarModal(id){
-    
-    eliminandodato(id);
-    myModalEliminar.show();
-    //alert("Eliminando");
-}
+// --------------APARTADO DE ELIMINAR -------------
 
-function eliminandodato(id){
-
+function mostrarModalEliminar(id){
     var datosEnviar = {
         "id":id
     }
 
     $.ajax({
         type: "POST",
-        url: "url",
+        url: urlBorrar,
         data: JSON.stringify(datosEnviar),
-        dataType: "dataType",
+        dataType: "json",
         success: function (response) {
-            
+            myModalEliminar.show()
+            completeDelete()
         },
-        error: function ( xhr, textStatus, errorThrown){
-            console.log("Error ", errorThrown);
+        error: function (xhr,textStatus, errorThrown){
+            console.log("Error", errorThrown)
         }
     });
 }
-//function eliminarCurso(id) 
-// {
-//     var datosEnviar = {"id":id}
-
-// $.ajax({
-//     type: "post",
-//     url: urlBorrar,
-//     data: JSON.stringify(datosEnviar),
-//     dataType: "json",
-//     success: function (response) {
-//         modalBorrarCurso.show();
-//         refrescarTabla();
-//     }
-// });
-// }
 
 function  completeDelete(){
     myModalEliminar.hide();
@@ -99,46 +81,46 @@ function  completeDelete(){
     consultardatos();
 }
 
+// --------------APARTADO DE EDITAR -------------
+
 function mostrarEditarModal(id, nombre, descripcion, tiempo){
-    $(id).val(id);
-    document.getElementById('nombre').value = nombre;
-    document.getElementById('descripcion').value = descripcion;
-    document.getElementById('tiempo').value = tiempo;
+    $("#id").val(id);
+    $("#nombre").val(nombre);
+    $("#descripcion").val(descripcion);
+    $("#tiempo").val(tiempo);
     myModalEditar.show();
 }
 
+var urlEditar = apibase + apieditar 
 
-formulario.addEventListener('submit', function(e)
-{
+$("#btnEditar").click(function (e) { 
     e.preventDefault();
-    //alert('salvando');
-
+    
     var datosEnviar = { 
-        "id":document.getElementById('id').value ,
-        "nombre":document.getElementById('nombre').value ,
-        "descripcion":document.getElementById('descripcion').value ,
-        "tiempo":document.getElementById('tiempo').value ,
+        "id":$("#id").val(),
+        "nombre":$("#nombre").val(),
+        "descripcion":$("#descripcion").val(),
+        "tiempo":$("#tiempo").val(),
         "usuario":"German Ariza"
     }
     $.ajax({
         type: "POST",
-        url: "url",
+        url: urlEditar,
         data: JSON.stringify(datosEnviar),
-        dataType: "dataType",
+        dataType: "json",
         success: function (response) {
-            completeInsert()
+            modalSuccess.show();
+            completeEdit();
         },
         error: function ( xhr, textStatus, errorThrown){
             console.log("Error ", errorThrown);
         }
     });
+
+function completeEdit(){
+    modalSuccess.hide();
+    window.location = 'listarCursoJQ.html'
+}
 });
 
-function completeInsert(){
-    
-}
-
-
-
-consultardatos();
 
