@@ -26,12 +26,12 @@ menuJQ.innerHTML += `<nav class="navbar navbar-expand-sm navbar-dark bg-secondar
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Estudiantes</a>
             <div class="dropdown-menu" aria-labelledby="dropdownId">
-            <a class="dropdown-item" href="listaEstudianteJQ.html">Lista</a>
-            <a class="dropdown-item" href="crearEstudianteJQ.html">Crear</a>
+            <a class="dropdown-item" href="listarEstudiantes.html">Lista</a>
+            <a class="dropdown-item" href="crearEstudiantes.html">Crear</a>
         </li>
         <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Grupo</a>
             <div class="dropdown-menu" aria-labelledby="dropdownId">
-            <a class="dropdown-item" href="listaGrupoJQ.html">Lista</a>
+            <a class="dropdown-item" href="listarGrupoJQ.html">Lista</a>
             <a class="dropdown-item" href="crearGrupoJQ.html">Crear</a>
         </li>
     </ul>`

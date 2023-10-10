@@ -1,7 +1,7 @@
 var formulario = document.querySelector('formulario');
 const myModalCrear = new bootstrap.Modal(document.getElementById('myModalCrear'));
 var apiBase = "https://paginas-web-cr.com/ApiPHP/apis/";
-var apiCrear = "InsertarProfesores.php"
+var apiCrear = "InsertarProfesores.php";
 
 var urlCrear = apiBase + apiCrear;
 
@@ -24,7 +24,6 @@ $(document).ready(function () {
             "nacionalidad":$("#nacionalidad").val(),
             "idCarreras":$("#idCarreras").val(),
             "usuario":$("#usuario").val(),
-            
         }
     
         $.ajax({
