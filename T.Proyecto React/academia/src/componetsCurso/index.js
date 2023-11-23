@@ -5,9 +5,48 @@ import React from 'react';
 class ListarCurso extends React.Component {
     constructor(props) {
         super(props);
+        
+        //THIS.STATE: crea un arreglo para manejar estados = memorias = igual a un Json
+        this.state = {
+            id : "",
+            nombre : "",
+            descripcion : "",
+            tiempo : "",
+            usuario : "",
+            url:"https://paginas-web-cr.com/ApiPHP/apis/",
+            listar: "ListaCurso.php"
+        }
     }
-    state = {  }
+
+    cargardatos(){
+
+        //const { url } = this.state;
+        var urlListar = this.state.url + this.state.listar;
+
+        fetch(urlListar)//Solicitud
+        .then( respuesta => respuesta.json())//Todo va a ser de tipo JSON
+        .then((datosrespuesta) => {
+            console.log(datosrespuesta.data)
+            //pintartabla(datosrespuesta.data)
+        })
+        .catch(console.log);
+    }
+
+    componentDidMount(){
+        this.cargardatos();
+    }
+
     render() { 
+        const {
+            id ,
+            nombre,
+            descripcion,
+            tiempo,
+            usuario,
+            url,
+            listar
+        } = this.state
+
         return (  
             <div className="container-fluid">
                 <h1>Listar Curso</h1>
@@ -24,14 +63,11 @@ class ListarCurso extends React.Component {
                         </thead>
                         <tbody>
                             <tr className="">
-                                <td scope="row">R1C1</td>
-                                <td>R1C2</td>
-                                <td>R1C3</td>
-                            </tr>
-                            <tr className="">
-                                <td scope="row">Item</td>
-                                <td>Item</td>
-                                <td>Item</td>
+                            <td scope="row">item.id</td>
+                            <td>item.nombre</td>
+                            <td>item.descripcion</td>
+                            <td>item.tiempo</td>
+                            <td>item.usuario</td>
                             </tr>
                         </tbody>
                     </table>
