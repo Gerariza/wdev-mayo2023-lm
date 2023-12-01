@@ -2,19 +2,17 @@
 import React from 'react';
 //Poneos el react adelante del componet (React.componet)
 //Se llamó con "ccc"
-class ListarCurso extends React.Component {
+class ListarUsuario extends React.Component {
     constructor(props) {
         super(props);
         
-        //THIS.STATE: crea un arreglo para manejar estados = memorias = igual a un Json
         this.state = {
             id : "",
-            nombre : "",
-            descripcion : "",
-            tiempo : "",
-            usuario : "",
+            name : "",
+            email : "",
+            password : "",
             url:"https://paginas-web-cr.com/ApiPHP/apis/",
-            listar: "ListaCurso.php",
+            listar: "ListaUsuarios.php",
             datos: [],
             datosCargados: false
         }
@@ -42,11 +40,10 @@ class ListarCurso extends React.Component {
 
     render() { 
         const {
-            id ,
-            nombre,
-            descripcion,
-            tiempo,
-            usuario,
+            id,
+            name,
+            email,
+            password,
             url,
             listar,
             datos,
@@ -55,16 +52,15 @@ class ListarCurso extends React.Component {
 
         return (  
             <div className="container-fluid">
-                <h1>Listar Curso</h1>
+                <h1>Listar Usuario</h1>
                 <div className="table-responsive">
                     <table className="table table-primary">
                         <thead>
                             <tr>
                                 <th scope="col">Id</th>
                                 <th scope="col">Nombre</th>
-                                <th scope="col">Descripcion</th>
-                                <th scope="col">Tiempo</th>
-                                <th scope="col">Usuario</th>
+                                <th scope="col">Correo Electronico</th>
+                                <th scope="col">Contraseña</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -73,10 +69,9 @@ class ListarCurso extends React.Component {
                                 (datosExtraidos) => (
                                     <tr className= "table-success">
                                 <th scope="col">{datosExtraidos.Id}</th>
-                                <th scope="col">{datosExtraidos.nombre}</th>
-                                <th scope="col">{datosExtraidos.descripcion}</th>
-                                <th scope="col">{datosExtraidos.tiempo}</th>
-                                <th scope="col">{datosExtraidos.usuario}</th>
+                                <th scope="col">{datosExtraidos.name}</th>
+                                <th scope="col">{datosExtraidos.email}</th>
+                                <th scope="col">{datosExtraidos.password}</th>
                             </tr>
                                 )
                             )
@@ -89,4 +84,4 @@ class ListarCurso extends React.Component {
         );
     }
 }
-export default ListarCurso;
+export default ListarUsuario;
