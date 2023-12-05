@@ -60,13 +60,7 @@ extends React.Component {
                         </input>
                 <small id="helpId" className="form-text text-muted">Tiempo</small>
                 </div>
-                <div className="mb-3">
-                <label for="" className="form-label">Usuario</label>
-                <input required type="text" onChange = {this.cambioValorInput} value={usuario}
-                    className="form-control" name="usuario" id="usuario" aria-describedby="helpId" placeholder="Ingrese el tiempo">
-                        </input>
-                <small id="helpId" className="form-text text-muted">usuario</small>
-                </div>
+                
 
 
                 <button type="reset" className="btn btn-danger">Borrar</button>
@@ -94,36 +88,70 @@ extends React.Component {
         enviarDatos = (e) => {
             alert("TEST")
             
+            //Frenar el render de la pagina
             e.preventDefault();
-        
-        const { id, nombre, descripcion, tiempo, usuario, url, crear } = this.state;
-        const urlCrear = url + crear;
 
-        const datos = {
-            id,
-            nombre,
-            descripcion,
-            tiempo,
-            usuario
-        };
-            
-        fetch(urlCrear, {
-            method: 'POST',
-            body: JSON.stringify(datos)
-            
-        })
-        .then(response => response.json())
-        .then(result => {
-            
-            alert("Datos enviados correctamente");
-        })
-        .catch(error => {
-            console.error("Error al realizar la solicitud:", error);
-            alert(`Error al enviar los datos: ${error.message}`);
-        });
+            // -------- resolucion profe ----------------
+            const { nombre, descripcion, tiempo } = this.state;
+
+            var datosEnviar = {
+                nombre: nombre,
+                descripcion: descripcion,
+                tiempo: tiempo,
+                usuario: "German Ariza"
+            };
+
+            var urlCrear = this.state.url + this.state.crear;
+
+            fetch(urlCrear, {
+                method: 'POST',
+                body: JSON.stringify(datosEnviar)
+                
+            })
+            .then(respuesta => respuesta.json())
+            .then(datosrespuesta => {
+                
+                alert("Datos enviados correctamente");
+
+            })
+            .catch(error => {
+                console.error("Error al realizar la solicitud:", error);
+                alert(`Error al enviar los datos: ${error.message}`);
+            });
+
+
         
+            // --------------- Mi resolucion ----------------
+    //     const { id, nombre, descripcion, tiempo, usuario, url, crear } = this.state;
+    //     const urlCrear = url + crear;
+
+    //     const datos = {
+    //         id,
+    //         nombre,
+    //         descripcion,
+    //         tiempo,
+    //         usuario
+    //     };
+            
+    //     fetch(urlCrear, {
+    //         method: 'POST',
+    //         body: JSON.stringify(datos)
+            
+    //     })
+    //     .then(response => response.json())
+    //     .then(result => {
+            
+    //         alert("Datos enviados correctamente");
+    //     })
+    //     .catch(error => {
+    //         console.error("Error al realizar la solicitud:", error);
+    //         alert(`Error al enviar los datos: ${error.message}`);
+    //     });
+        
+    // }
+
+        }
     }
-}
 
 
 export default CrearCurso
